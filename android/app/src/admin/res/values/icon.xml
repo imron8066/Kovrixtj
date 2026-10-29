@@ -1,0 +1,4 @@
+<resources>
+    <!-- фон под картинкой значка; сама картинка — mipmap/ic_launcher_foreground -->
+    <color name="icon_background">#0A0605</color>
+</resources>

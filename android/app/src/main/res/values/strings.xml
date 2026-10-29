@@ -1,0 +1,3 @@
+<resources>
+    <!-- app_name задаёт вариант сборки: android/app/build.gradle, productFlavors -->
+</resources>

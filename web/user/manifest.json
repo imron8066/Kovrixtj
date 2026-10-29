@@ -1,0 +1,15 @@
+{
+  "name": "Kovrix",
+  "short_name": "Kovrix",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07070c",
+  "theme_color": "#07070c",
+  "icons": [
+    { "src": "../shared/favicon.ico?v=20261029c", "type": "image/x-icon", "sizes": "16x16 32x32" },
+    { "src": "../shared/icon-192.png?v=20261029c", "type": "image/png", "sizes": "192x192" },
+    { "src": "../shared/icon-512.png?v=20261029c", "type": "image/png", "sizes": "512x512" },
+    { "src": "../shared/icon-192-maskable.png?v=20261029c", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+    { "src": "../shared/icon-512-maskable.png?v=20261029c", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

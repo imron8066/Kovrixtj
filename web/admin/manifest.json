@@ -1,0 +1,13 @@
+{
+  "name": "KovriX A",
+  "short_name": "KovriX A",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b0f",
+  "theme_color": "#090b0f",
+  "icons": [
+    { "src": "../shared/favicon-admin.ico?v=20261029c", "type": "image/x-icon", "sizes": "32x32" },
+    { "src": "../shared/icon-admin-192.png?v=20261029c", "type": "image/png", "sizes": "192x192" },
+    { "src": "../shared/icon-admin-512.png?v=20261029c", "type": "image/png", "sizes": "512x512" }
+  ]
+}

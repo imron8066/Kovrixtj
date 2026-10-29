@@ -1,0 +1,60 @@
+{
+  "name": "Donix",
+  "version": "2.2.0",
+  "private": true,
+  "scripts": {
+    "android": "bash scripts/android.sh",
+    "android:dev": "react-native run-android --mode userDebug",
+    "ios": "bash scripts/ios.sh",
+    "ios:release": "bash scripts/ios-sim.sh && react-native run-ios --simulator \"iPhone 16 Pro Max\" --mode Release",
+    "ios:dev": "bash scripts/ios-sim.sh && react-native run-ios --simulator \"iPhone 16 Pro Max\"",
+    "ios:admin": "bash scripts/ios-admin.sh",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest",
+    "apk": "cd android && ./gradlew assembleDebug assembleRelease && mkdir -p ../builds/debug && cp app/build/outputs/apk/user/release/app-user-release.apk ../builds/Kovrix-ПОЛЬЗОВАТЕЛЬ.apk && cp app/build/outputs/apk/admin/release/app-admin-release.apk ../builds/Kovrix-АДМИН.apk && cp app/build/outputs/apk/user/debug/app-user-debug.apk ../builds/debug/Kovrix-ПОЛЬЗОВАТЕЛЬ-debug.apk && cp app/build/outputs/apk/admin/debug/app-admin-debug.apk ../builds/debug/Kovrix-АДМИН-debug.apk",
+    "android:admin": "bash scripts/android.sh admin",
+    "web": "node scripts/web-data.js",
+    "apk:release": "cd android && ./gradlew assembleUserRelease assembleAdminRelease -PreactNativeArchitectures=armeabi-v7a,arm64-v8a && cp app/build/outputs/apk/user/release/app-user-release.apk ../builds/Kovrix-ПОЛЬЗОВАТЕЛЬ.apk && cp app/build/outputs/apk/admin/release/app-admin-release.apk ../builds/Kovrix-АДМИН.apk",
+    "rules": "node scripts/rules.js",
+    "bot": "node bot/bot.js",
+    "bot:on": "node scripts/bot-service.js on",
+    "bot:off": "node scripts/bot-service.js off",
+    "bot:vps": "bash scripts/bot-vps.sh",
+    "play": "sh scripts/play.sh",
+    "server": "node server/server.js",
+    "vps": "bash scripts/vps.sh"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "firebase": "^13.0.0",
+    "react": "19.2.3",
+    "react-native": "0.87.1",
+    "react-native-image-picker": "^8.2.1",
+    "react-native-safe-area-context": "^5.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.2.0",
+    "@react-native-community/cli-platform-android": "20.2.0",
+    "@react-native-community/cli-platform-ios": "20.2.0",
+    "@react-native/babel-preset": "0.87.1",
+    "@react-native/eslint-config": "0.87.1",
+    "@react-native/jest-preset": "0.87.1",
+    "@react-native/metro-config": "0.87.1",
+    "@react-native/typescript-config": "0.87.1",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.2.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.2.3",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">= 22.13.0"
+  }
+}

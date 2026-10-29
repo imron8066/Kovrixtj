@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07070c">
+  <title>Kovrix — донать быстро, играй красиво</title>
+  <meta name="description" content="Kovrix — быстрый донат в игры и продажа игровых аккаунтов.">
+  <meta property="og:title" content="Kovrix — донать быстро, играй красиво">
+  <meta property="og:description" content="Донат в игры и продажа аккаунтов">
+  <meta property="og:image" content="https://kovrixtj.web.app/shared/poster.jpg?v=20261029c">
+  <link rel="icon" href="../shared/favicon.ico?v=20261029c" sizes="any">
+  <link rel="icon" href="../shared/icon-192.png?v=20261029c" type="image/png" sizes="192x192">
+  <link rel="icon" href="../shared/icon-512.png?v=20261029c" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="../shared/apple-touch-icon.png?v=20261029c">
+  <link rel="manifest" href="manifest.json?v=20261029c">
+  <link rel="stylesheet" href="../shared/style.css?v=20261029c">
+</head>
+<body>
+  <!-- заставка при входе: кольцо, логотип, название; раз за сеанс -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-logo"><i></i><img src="../shared/logo.png?v=20261029c" alt=""></div>
+    <b>KOVRI<span>X</span></b>
+    <small>Донать быстро — играй красиво</small>
+  </div>
+  <script>
+    try {
+      if (sessionStorage.getItem('splash')) document.getElementById('splash').remove();
+      else sessionStorage.setItem('splash', '1');
+    } catch (e) {}
+    setTimeout(function () { var el = document.getElementById('splash'); if (el) el.remove(); }, 2600);
+  </script>
+  <header class="top">
+    <a class="logo" href="#/"><img src="../shared/logo.png?v=20261029c" alt="">KOVRI<span>X</span></a>
+  </header>
+
+  <main id="app"><p class="muted center">Загрузка…</p></main>
+
+  <nav class="tabs" id="tabs" hidden>
+    <a href="#/" data-tab="donate"><i>🎮</i>Донат</a>
+    <a href="#/sell" data-tab="sell"><i>🏷</i>Продажа</a>
+    <a href="#/answers" data-tab="answers"><i>💬</i>Ответы <span class="count" id="count-answers" hidden></span></a>
+    <a href="#/rewards" data-tab="rewards"><i>🏆</i>Топ</a>
+    <a href="#/profile" data-tab="profile"><i>👤</i>Профиль</a>
+  </nav>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../shared/data.js?v=20261029c"></script>
+  <script src="../shared/core.js?v=20261029c"></script>
+  <script src="games.js?v=20261029c"></script>
+  <script src="app.js?v=20261029c"></script>
+</body>
+</html>
