@@ -12,7 +12,10 @@ const crypto = require('crypto');
 const ROOT = path.join(__dirname, '..');
 const DATA = process.env.DATA_DIR || path.join(__dirname, 'data');
 const WEB = path.join(ROOT, 'web');
-const RULES_FILE = path.join(ROOT, 'firebase/database.rules.json');
+// Правила лежат в firebase/ всего проекта; если сервер развёрнут отдельно
+// (например, на Render только папка server/), берётся копия из data/.
+const RULES_FILE = [path.join(ROOT, 'firebase/database.rules.json'), path.join(DATA, 'database.rules.json')]
+  .find(f => fs.existsSync(f)) || path.join(ROOT, 'firebase/database.rules.json');
 const PORT = Number(process.env.PORT || 8080);
 const HOUR = 3600;
 
