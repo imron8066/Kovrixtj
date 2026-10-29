@@ -1685,6 +1685,9 @@ let bot = { id: 0, username: 'Kovrixtj_bot' };
   // бот команды (KovriX A) — в этом же процессе, если задан его токен
   const adminToken = process.env.ADMIN_TOKEN || env.ADMIN_TOKEN;
   if (adminToken) require('./admin').start({ token: adminToken, db, auth, TOKEN_URL, FIREBASE_KEY, SITE, log, sleep, esc, copy });
+  // на бесплатном Render бот — web-сервис: отвечает на HTTP, чтобы его
+  // можно было будить пингом (иначе через 15 минут без запросов он засыпает)
+  if (process.env.PORT) require('http').createServer((req, res) => res.end('ok')).listen(Number(process.env.PORT));
 })().catch((e) => {
   console.error(e.message);
   process.exit(1);

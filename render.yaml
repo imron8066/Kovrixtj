@@ -2,13 +2,16 @@
 # Render → New → Blueprint → репозиторий Kovrixtj. Секреты (sync: false)
 # Render спросит при создании — значения из bot/.env.
 services:
-  - type: worker
+  # бесплатный тариф: web-сервис, который будит пинг каждые 10 минут
+  # (cron-job.org → https://kovrix-bot.onrender.com); worker бесплатно нельзя
+  - type: web
     name: kovrix-bot
     runtime: node
-    plan: starter
+    plan: free
     region: frankfurt
     buildCommand: "true"
     startCommand: node bot/bot.js
+    healthCheckPath: /
     autoDeploy: true
     envVars:
       - key: NODE_VERSION
