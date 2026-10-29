@@ -75,7 +75,6 @@ yarn-error.log
 !.yarn/versions
 
 # сборки
-builds/*.apk
 
 # Firebase
 .firebase/
@@ -102,9 +101,11 @@ server/*.log
 bot/owner.txt
 
 # большие файлы и сборки
-builds/
+builds/*
+!builds/Kovrix-*.apk
 ads/
 IconKitchen-Output*/
 *.mp4
+!bot/assets/info.mp4
 *.log
 web/_shot.html
